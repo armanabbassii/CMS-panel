@@ -1,5 +1,10 @@
-class SSOLogin:
+from Locators import *
 
-    def __int__(self,driver):
+
+class Login:
+
+    def __int__(self, driver):
         self.driver = driver
 
+    def login_with_username(self):
+        self.driver.find_element('xpath', username_button_class).click()
