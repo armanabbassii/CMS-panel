@@ -2,7 +2,7 @@ from Locators import *
 
 
 class SSOLogin:
-
+#??? def and __init
     def __init__(self, driver):
         self.driver = driver
 
@@ -11,3 +11,9 @@ class SSOLogin:
 
     def sso_password(self, password):
         self.driver.find_element('xpath', password_textbox_name).send_keys(sso_password)
+
+    def sso_go(self):
+        self.driver.find_element('xpath', go_button_name).click()
+
+    def sso_users(self):
+        self.driver.find_element('xpath', users_button_title.click()
