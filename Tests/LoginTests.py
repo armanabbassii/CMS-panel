@@ -7,5 +7,11 @@ import unittest
 
 class LoginTests(unittest.TestCase):
 
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+        cls.driver.implicitly_wait(3)
+
+
 
 
