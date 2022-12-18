@@ -23,3 +23,9 @@ class LoginTests(unittest.TestCase):
         ssologin.sso_go()
         ssologin.sso_users()
         sleep(5)
+
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        cls.driver.close()
+        cls.driver.quit()
