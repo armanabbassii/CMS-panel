@@ -2,7 +2,7 @@ from Locators import *
 
 
 class SSOLogin:
-
+#??? def and __init
     def __init__(self, driver):
         self.driver = driver
 
