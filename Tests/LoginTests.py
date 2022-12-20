@@ -18,5 +18,19 @@ class LoginTests(unittest.TestCase):
     def valid_login_vs_SSOLogin_tests(self):
         self.driver.get('http://dev.cms.test/')
         login = Login(driver=self.driver)
+        ssologin = SSOLogin(driver=self.driver)
         login.login_with_username()
+        ssologin.sso_username('omid1')
+        ssologin.sso_password('m@123456')
+        ssologin.sso_go()
+        ssologin.sso_users()
         sleep(5)
+
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        cls.driver.close()
+        cls.driver.quit()
+
+    if __name__ == '__main__':
+        unittest.main()

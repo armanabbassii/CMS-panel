@@ -3,7 +3,7 @@ from Locators import *
 
 class Login:
 
-    def __int__(self, driver):
+    def __init__(self, driver):
         self.driver = driver
 
     def login_with_username(self):
