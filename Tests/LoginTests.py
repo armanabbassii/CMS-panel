@@ -15,7 +15,7 @@ class LoginTests(unittest.TestCase):
         cls.driver.implicitly_wait(3)
 
     ##???
-    def valid_login_vs_SSOLogin_tests(self):
+    def test_valid_login_vs_SSOLogin_tests(self):
         self.driver.get('http://dev.cms.test/')
         login = Login(driver=self.driver)
         ssologin = SSOLogin(driver=self.driver)
