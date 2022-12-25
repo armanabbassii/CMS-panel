@@ -2,7 +2,7 @@
 username_button_class = "(//div[@class = 'login-btn'])[1]"
 
 # //////////////////SSO login//////////////
-username_textbox_name = "//*[@name='identity']"
+username_textbox_name = "//input[@id='authIdentity-inp']"
 password_textbox_name = "//*[@name='password']"
 go_button_name = "(//*[@name='go'])[1]"
 users_button_title = "//*[@title= 'seller.cms3']"

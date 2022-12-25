@@ -12,7 +12,7 @@ class LoginTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-        cls.driver.implicitly_wait(3)
+        cls.driver.implicitly_wait(10)
 
     ##???
     def test_valid_login_vs_SSOLogin_tests(self):
@@ -20,11 +20,12 @@ class LoginTests(unittest.TestCase):
         login = Login(driver=self.driver)
         ssologin = SSOLogin(driver=self.driver)
         login.login_with_username()
+        driver.switchTo().window("windowName")
         ssologin.sso_username('omid1')
         ssologin.sso_password('m@123456')
         ssologin.sso_go()
         ssologin.sso_users()
-        sleep(5)
+        sleep(10)
 
 
     @classmethod
