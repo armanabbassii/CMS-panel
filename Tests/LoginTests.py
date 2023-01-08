@@ -1,3 +1,5 @@
+from webdriver_manager import driver
+
 from Pages.Login import Login
 from Pages.SSOLogin import SSOLogin
 from selenium import webdriver
@@ -20,12 +22,13 @@ class LoginTests(unittest.TestCase):
         login = Login(driver=self.driver)
         ssologin = SSOLogin(driver=self.driver)
         login.login_with_username()
-        driver.switchTo().window("windowName")
+        windowhandle = driver.current_window_handle
         ssologin.sso_username('omid1')
         ssologin.sso_password('m@123456')
         ssologin.sso_go()
         ssologin.sso_users()
-        sleep(10)
+        print(driver.current_window_handle)
+        sleep(5)
 
 
     @classmethod
